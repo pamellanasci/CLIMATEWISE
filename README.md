@@ -1,8 +1,6 @@
 # ClimateWise  
 ### *Inteligência Climática para Decisões que Transformam o Futuro*
 
-
-
 ## Sobre o Projeto
 
 A **ClimateWise** é uma plataforma de inteligência climática que centraliza dados meteorológicos, analisa tendências, identifica riscos ambientais e transforma tudo isso em insights simples e acionáveis.
@@ -11,13 +9,13 @@ Construída com foco em **usabilidade, visual moderno e decisões sustentáveis*
 
 ---
 
-## 🎯 Propósito
+## Propósito
 
 Equipar usuários, empresas e governos com informações climáticas precisas e visualmente impactantes, tornando decisões ambientais mais inteligentes, eficientes e seguras.
 
 ---
 
-# 🌤️ Funcionalidades Principais
+# Funcionalidades Principais
 
 ### Centralização de Dados Climáticos  
 Integra diversas fontes em um único ambiente.
