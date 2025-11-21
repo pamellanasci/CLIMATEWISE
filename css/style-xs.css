@@ -1,6 +1,20 @@
 /* Esconde o menu padrão no mobile */
 .menu {
   display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 45%;
+  padding: 16px 24px 24px 24px;
+  background-color: #0A0F1D;
+  list-style: none;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 5px;
+}
+
+.menu.menu-aberto {
+  display: flex;
 }
 
 /* Centraliza o conteúdo da barra de navegação */
@@ -14,6 +28,7 @@
     margin: 0 auto;
 }
 
+/* Remove padding lateral apenas no mobile — para colar login e hamburguer nas bordas */
 header{
     padding-left: 10px;
     padding-right: 10px;
@@ -46,8 +61,8 @@ header{
   position: static; 
 }
 
-.hero {
-  padding: 120px 24px 40px 24px; 
+.hero-content{
+    padding: 0 20px; 
 }
 
 /* título menor no mobile */
