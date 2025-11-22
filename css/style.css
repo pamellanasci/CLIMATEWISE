@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* MATERIAL ICONS */
+@import url('https://fonts.googleapis.com/css2?family=Material+Icons+Round');
+
 
 *{
     box-sizing: border-box;
@@ -7,7 +12,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #020617;
     color: #e5e7eb;
 }
@@ -267,3 +272,481 @@ header {
   background-color: #64B5F6;
   border-color: #64B5F6;
 }
+
+/* Hero Sobre */
+.hero-sobre {
+  width: 100%;
+  height: 100vh;
+  padding: 0 40px;
+  background-image:
+    linear-gradient(180deg, rgba(2,6,23,0.45), rgba(15,23,42,0.85)),
+    url("../assets/slide1.jpg");
+  
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-sobre-content {
+  max-width: 900px;
+}
+
+.hero-sobre-content h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero-sobre-content p {
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 680px;
+  color: #F1EDE6;
+}
+
+
+.sobre-intro {
+  padding: 60px 80px;
+  display: flex;
+  gap: 60px;
+}
+
+.sobre-intro-texto {
+  flex: 2;
+}
+
+.sobre-intro-texto h2 {
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.sobre-intro-texto p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #E2E8F0;
+  margin-bottom: 12px;
+}
+
+.sobre-intro-lista {
+  flex: 1.5;
+}
+
+.sobre-intro-lista h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #F1EDE6;
+}
+
+.sobre-intro-lista ul {
+  padding-left: 18px;
+}
+
+.sobre-intro-lista li {
+  font-size: 15px;
+  line-height: 22px;
+  color: #CBD5F5;
+  margin-bottom: 8px;
+}
+
+.sobre-pilares {
+  padding: 60px 80px 80px 80px;
+}
+
+.sobre-pilares h2 {
+  font-size: 26px;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+.sobre-pilares-grid {
+  display: flex;
+  gap: 24px;
+}
+
+.sobre-card {
+  flex: 1;
+  background-color: #020617;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.sobre-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #64B5F6;
+}
+
+.sobre-card p {
+  font-size: 15px;
+  line-height: 22px;
+  color: #E2E8F0;
+}
+
+.sobre-funcionalidades {
+  padding: 60px 80px;
+}
+
+.sobre-funcionalidades h2 {
+  font-size: 32px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.func-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.func-card {
+  background-color: #020617;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  min-height: 220px;
+  transition: transform 0.3s ease;
+}
+
+.func-card:hover {
+  transform: translateY(-6px);
+}
+
+.func-icon {
+  font-size: 40px;
+  color: #64B5F6;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.func-card h3 {
+  font-size: 18px;
+  color: #F1EDE6;
+  margin-bottom: 10px;
+}
+
+.func-card p {
+  color: #CBD5E1;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+/* SEÇÃO QUEM SOMOS */
+.sobre-equipe {
+  padding: 80px 120px 100px;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.4), #020617);
+}
+
+.sobre-equipe-header {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.sobre-equipe-legenda {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.sobre-equipe-titulo {
+  font-size: 32px;
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.sobre-equipe-texto {
+  font-size: 16px;
+  line-height: 26px;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+/* GRID DE CARDS */
+.equipe-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* CARD DO INTEGRANTE */
+.equipe-card {
+  background: rgba(15, 23, 42, 0.98);
+  border-radius: 18px;
+  padding: 24px 22px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* FOTO */
+.equipe-foto {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #64B5F6;
+  margin-bottom: 14px;
+}
+
+/* NOME / RM / BIO */
+.equipe-nome {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #ffffff;
+}
+
+.equipe-rm {
+  font-size: 14px;
+  margin: 0 0 10px;
+  color: #9ca3af;
+}
+
+.equipe-bio {
+  font-size: 14px;
+  line-height: 22px;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+/* FAQ */
+
+.hero-faq {
+  min-height: 260px;
+  padding: 80px 0 30px;
+  background-image: linear-gradient(180deg, rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.95)), url("../assets/slide2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-faq-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-faq-legenda {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #64B5F6;
+  margin-bottom: 20px;
+}
+
+.hero-faq h1 {
+  font-size: 40px;
+  line-height: 46px;
+  margin-bottom: 16px;
+  color: #F1EDE6;
+}
+
+.hero-faq p {
+  font-size: 18px;
+  line-height: 26px;
+  color: #E5E9F0;
+}
+
+.faq-section {
+  padding: 60px 80px 80px 80px;
+  background-color: #020817;
+}
+
+.faq-titulo {
+  font-size: 26px;
+  margin-bottom: 32px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.faq-item {
+  background-color: #050B1B;
+  border-radius: 18px;
+  padding: 18px 20px;
+  border: 1px solid rgba(241, 237, 230, 0.06);
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item[open] {
+  border-color: #64B5F6;
+}
+
+.faq-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #E5E9F0;
+}
+
+.faq-icon {
+  font-size: 20px;
+  color: #64B5F6;
+}
+
+/*CONTATO */
+.contato-section {
+  padding: 60px 80px 80px 80px;
+  background-color: #020817;
+}
+
+.contato-container {
+  max-width: 1120px;
+  margin: 120px auto 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.contato-info h2 {
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.contato-info p {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+
+.contato-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contato-lista li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #E5E9F0;
+}
+
+.contato-icon {
+  font-size: 20px;
+  color: #64B5F6;
+}
+
+.contato-form {
+  background-color: #050B1B;
+  border-radius: 18px;
+  padding: 24px 24px 28px 24px;
+  border: 1px solid rgba(241, 237, 230, 0.08);
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.form-grupo label {
+  font-size: 14px;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background-color: #020817;
+  color: #F1EDE6;
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+  color: #9CA3AF;
+}
+
+.form-grupo textarea {
+  resize: vertical;
+}
+
+.btn-enviar {
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* FOOTER GERAL (páginas internas) */
+
+.footer {
+  padding: 20px 40px;
+  text-align: center;
+  font-size: 13px;
+  color: #9CA3AF;
+  background-color: #020817;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+
+/* Formulário */
+
+/* ===== AVISOS DE VALIDAÇÃO - PALETA CLIMATEWISE ===== */
+
+.form-grupo .erro-texto {
+  font-size: 12px;
+  color: #7dd3fc; /* azul claro ClimateWise */
+  background: rgba(56, 189, 248, 0.08);
+  border-left: 3px solid #38bdf8;
+  padding: 6px 10px;
+  border-radius: 10px;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+/* Campos com erro */
+.form-grupo input.erro,
+.form-grupo select.erro,
+.form-grupo textarea.erro {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.02);
+}
+
+
+
+

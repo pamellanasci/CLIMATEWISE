@@ -59,11 +59,10 @@ Organiza perfis e níveis de acesso com segurança.
 
 ---
 
-# Equipe  
-*(Adicionar posteriormente)*  
-- Pamella Nascimento — RM 567006 
-- AMANDA SAYURI SANTOS UECHI, RM 566892 
-- MARIANA TENÓRIO CAVALCANTE MALVÃO, RM 567541
+# Equipe   
+- Pamella Nascimento, RM 567006 - https://github.com/pamellanasci - https://www.linkedin.com/in/pamellanasci/
+- AMANDA SAYURI SANTOS UECHI, RM 566892 - https://github.com/amandauechi - https://www.linkedin.com/in/amanda-uechi-551623374/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app 
+- MARIANA TENÓRIO CAVALCANTE MALVÃO, RM 567541 - https://github.com/marianatcmalvao - https://www.linkedin.com/in/mariana-malv%C3%A3o-871ab8198/
 
 ---
 

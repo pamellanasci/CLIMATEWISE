@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-xs.css" media="(max-width: 600px)">
+  <link rel="stylesheet" href="css/style-sm.css" media="(min-width: 600px) and (max-width: 767.98px)">
+  <link rel="stylesheet" href="css/style-md.css" media="(min-width: 768px) and (max-width: 991.98px)">
+  <link rel="stylesheet" href="css/style-lg.css" media="(min-width: 992px) and (max-width: 1299.98px)">
+  <link rel="stylesheet" href="css/style-xl.css" media="(min-width: 1300px)">
+  <title>ClimateWise | Contato</title>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo da ClimateWise com símbolo circular representando sustentabilidade e tecnologia.">
+      </div>
+
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="quemsomos.html">Quem somos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#" class="btn-login">Login</a>
+        <button class="hamburguer" id="hamburguer">☰</button>
+      </div>
+
+    </nav>
+  </header>
+
+  <main id="contato">
+    <section class="contato-section">
+      <div class="contato-container">
+
+        <div class="contato-info">
+          <h2>Como a ClimateWise pode ajudar?</h2>
+          <p>
+            Use o formulário ao lado para compartilhar o contexto da sua necessidade:
+            monitoramento climático, alertas, dashboards ou integração com outros sistemas.
+          </p>
+
+          <ul class="contato-lista">
+            <li>
+              <span class="material-icons-round contato-icon">mail</span>
+              contato@climatewise.app
+            </li>
+          </ul>
+        </div>
+
+        <!-- FORMULÁRIO CORRIGIDO -->
+        <form class="contato-form" novalidate>
+
+          <div class="form-grupo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+          </div>
+
+          <div class="form-grupo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="nome@exemplo.com">
+          </div>
+
+          <div class="form-grupo">
+            <label for="tipo">Você é:</label>
+            <select id="tipo" name="tipo">
+              <option value="">Selecione uma opção</option>
+              <option value="empresa">Empresa / Organização</option>
+              <option value="governo">Governo / Órgão público</option>
+              <option value="academico">Professor(a) / Pesquisador(a)</option>
+              <option value="estudante">Estudante</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" placeholder="Ex.: Monitorar riscos climáticos">
+          </div>
+
+          <div class="form-grupo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva brevemente a sua necessidade"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary btn-enviar">Enviar mensagem</button>
+
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 ClimateWise • Projeto acadêmico FIAP - Global Solution 2025.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

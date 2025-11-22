@@ -1,88 +1,259 @@
-/* Esconde o menu padrão no mobile */
-.menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 45%;
-  padding: 16px 24px 24px 24px;
-  background-color: #0A0F1D;
-  list-style: none;
-  flex-direction: column;
-  gap: 16px;
-  border-radius: 5px;
-}
+/* HERO SOBRE — MOBILE */
+@media (max-width: 600px) {
 
-.menu.menu-aberto {
-  display: flex;
-}
+/* Esconde o menu padrão no mobile */
+    .menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 45%;
+    padding: 16px 24px 24px 24px;
+    background-color: #0A0F1D;
+    list-style: none;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 5px;
+    }
+
+    .menu.menu-aberto {
+    display: flex;
+    }
 
 /* Centraliza o conteúdo da barra de navegação */
-.navbar{
-    justify-content: center;
-    position: relative;
-}
+    .navbar{
+        justify-content: center;
+        position: relative;
+    }
 
 /* Mantém o logo centralizado na navbar */
-.logo{
-    margin: 0 auto;
-}
+    .logo{
+        margin: 0 auto;
+    }
 
 /* Remove padding lateral apenas no mobile — para colar login e hamburguer nas bordas */
-header{
-    padding-left: 10px;
-    padding-right: 10px;
-}
+    header{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
-.btn-login {
-  display: block;
-  position: absolute;
-  right: 0px;
-  top: 12px;
-  padding: 8px 20px;
-  font-size: 16px;
-}
+    .btn-login {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 12px;
+    padding: 8px 20px;
+    font-size: 16px;
+    }
 
 /* Exibe o menu hambúrguer no mobile e posiciona no canto superior esquerdo */
-.hamburguer {
-  display: inline-block;
-  position: absolute;
-  left: 0px;
-  top: 12px;
-  font-size: 26px;
-  background: none;
-  border: none;
-  color: #F1EDE6;
-  cursor: pointer;
-}
+    .hamburguer {
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    top: 12px;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: #F1EDE6;
+    cursor: pointer;
+    }
 
 /* garante que o grupo de ações não quebre nada no mobile */
-.nav-actions {
-  position: static; 
-}
+    .nav-actions {
+    position: static; 
+    }
 
-.hero-content{
-    padding: 0 20px; 
-}
+    .hero-content{
+        padding: 0 20px; 
+    }
 
 /* título menor no mobile */
-.hero-content h1 {
-  font-size: 28px;
-  line-height: 34px;
-}
+    .hero-content h1 {
+    font-size: 28px;
+    line-height: 34px;
+    }
 
 /* texto menor no mobile */
-.hero-content p {
-  font-size: 14px;
-  line-height: 22px;
-}
+    .hero-content p {
+    font-size: 14px;
+    line-height: 22px;
+    }
 
 /* botões menores no mobile */
-.btn-primary,
-.btn-secondary {
-  font-size: 14px;
-  padding: 8px 16px;
-  border-radius: 40px;
-  width: auto;         
-  text-align: center;
+    .btn-primary,
+    .btn-secondary {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 40px;
+    width: auto;         
+    text-align: center;
+    }
+
+    .hero-sobre {
+    padding: 120px 24px 40px 24px;
+    min-height: auto;
+    height: auto;
+    background-position: center;
+    }
+
+    .hero-sobre-content h1 {
+    font-size: 26px;
+    line-height: 32px;
+    }
+
+    .hero-sobre-content p {
+    font-size: 16px;
+    line-height: 22px;
+    }
+
+    .sobre-intro {
+    padding: 40px 24px;
+    flex-direction: column;
+    gap: 24px;
+    }
+
+    .sobre-pilares {
+    padding: 40px 24px 60px 24px;
+    }
+
+    .sobre-pilares-grid {
+    flex-direction: column;
+    }
+
+/*FUNCIONALIDADES*/
+
+    .sobre-funcionalidades {
+    padding: 40px 16px;       
+    }
+
+    .sobre-funcionalidades h2 {
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    }
+
+/* força 1 card por linha no mobile */
+    .func-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    }
+
+/* card mais compacto no mobile */
+    .func-card {
+    padding: 16px;
+    }
+
+
+/* EQUIPE - MOBILE */
+
+    .sobre-equipe {
+    padding: 60px 20px 70px;
+    }
+
+    .sobre-equipe-header {
+    margin-bottom: 32px;
+    }
+
+    .sobre-equipe-titulo {
+    font-size: 24px;
+    }
+
+    .sobre-equipe-texto {
+    font-size: 14px;
+    }
+
+    /* 1 card por linha no mobile */
+    .equipe-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    }
+
+    .equipe-card {
+    padding: 20px 18px;
+    }
+
+    .equipe-foto {
+    width: 80px;
+    height: 80px;
+    }
+
+    /* FAQ — MOBILE */
+  .hero-faq {
+    padding: 120px 24px 40px 24px;
+    min-height: auto;
+    height: auto;
+    background-position: center;
+  }
+
+  .hero-faq h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .hero-faq p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .faq-section {
+    padding: 40px 20px 60px 20px;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .faq-item {
+    padding: 14px 14px 12px 14px;
+  }
+
+  .faq-item p {
+    font-size: 13px;
+  }
+
+  /* CONTATO — MOBILE */
+
+  .hero-contato {
+    padding: 120px 24px 40px 24px;
+    min-height: auto;
+    height: auto;
+    background-position: center;
+  }
+
+  .hero-contato h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .hero-contato p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .contato-section {
+    padding: 40px 20px 60px 20px;
+  }
+
+  .contato-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contato-form {
+    padding: 20px 18px 24px 18px;
+  }
+
+  .btn-enviar {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .footer {
+    padding: 16px 20px;
+    font-size: 12px;
+  }
 }
+
