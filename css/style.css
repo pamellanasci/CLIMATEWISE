@@ -748,5 +748,135 @@ header {
 }
 
 
+/* LOGIN */
+
+.login-section {
+  padding: 60px 80px 80px 80px;
+  background-color: #020817;
+}
+
+.login-container {
+  max-width: 960px;
+  margin: 120px auto 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.login-info h2 {
+  font-size: 26px;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.login-info p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #E5E9F0;
+  margin-bottom: 10px;
+}
+
+.login-info-legenda {
+  font-size: 14px;
+  color: #9CA3AF;
+}
+
+.login-form {
+  background-color: #050B1B;
+  border-radius: 18px;
+  padding: 24px 24px 28px 24px;
+  border: 1px solid rgba(241, 237, 230, 0.08);
+}
+
+.login-form h3 {
+  font-size: 20px;
+  margin: 0 0 18px;
+  color: #F1EDE6;
+}
+
+.login-linha-opcoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0 14px;
+  font-size: 13px;
+}
+
+.login-lembrar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #E5E9F0;
+}
+
+.login-lembrar input {
+  width: 14px;
+  height: 14px;
+}
+
+.login-esqueci {
+  color: #64B5F6;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.login-esqueci:hover {
+  text-decoration: underline;
+}
+
+.btn-login-submit {
+  width: 100%;
+  text-align: center;
+}
+
+.login-cadastrar {
+  color: #64B5F6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-cadastrar:hover {
+  text-decoration: underline;
+}
+
+/* CRIAR CONTA */
+
+.cadastro-section {
+  padding: 60px 80px 80px 80px;
+  background-color: #020817;
+}
+
+.cadastro-container {
+  max-width: 960px;
+  margin: 120px auto 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.cadastro-info h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.cadastro-info p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #E5E9F0;
+  margin-bottom: 10px;
+}
+
+.cadastro-form {
+  background-color: #050B1B;
+  border-radius: 18px;
+  padding: 24px 24px 28px 24px;
+  border: 1px solid rgba(241, 237, 230, 0.08);
+}
+
+
+
 
 

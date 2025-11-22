@@ -144,3 +144,142 @@ if (formContato) {
     }
   });
 }
+
+// VALIDAÇÃO DO LOGIN
+
+const formLogin = document.querySelector('.login-form');
+
+if (formLogin) {
+  formLogin.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let loginValido = true;
+
+    const mensagensErro = formLogin.querySelectorAll('.erro-texto');
+    mensagensErro.forEach(msg => msg.remove());
+
+    const camposComErro = formLogin.querySelectorAll('.erro');
+    camposComErro.forEach(campo => campo.classList.remove('erro'));
+
+    const emailLogin = document.getElementById('login-email');
+    const senhaLogin = document.getElementById('login-senha');
+
+    function criaErro(campo, mensagem) {
+      loginValido = false;
+      campo.classList.add('erro');
+
+      const span = document.createElement('span');
+      span.classList.add('erro-texto');
+      span.textContent = mensagem;
+
+      campo.parentElement.appendChild(span);
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailLogin.value.trim()) {
+      criaErro(emailLogin, 'Informe seu e-mail.');
+    } else if (!emailRegex.test(emailLogin.value.trim())) {
+      criaErro(emailLogin, 'Digite um e-mail válido.');
+    }
+
+    if (!senhaLogin.value.trim()) {
+      criaErro(senhaLogin, 'Informe sua senha.');
+    } else if (senhaLogin.value.trim().length < 6) {
+      criaErro(senhaLogin, 'A senha deve ter no mínimo 6 caracteres.');
+    }
+
+    if (loginValido) {
+      window.location.href = "dashboard.html"; 
+    }
+  });
+}
+
+// --- VALIDAÇÃO CRIAR CONTA ---
+
+const formCadastro = document.querySelector('.cadastro-form');
+const tipoConta = document.getElementById('tipoConta');
+const campoAtuacao = document.querySelector('.empresa-campo');
+
+if (campoAtuacao) {
+  campoAtuacao.style.display = "none";
+}
+
+if (tipoConta && campoAtuacao) {
+  tipoConta.addEventListener('change', () => {
+    campoAtuacao.style.display =
+      tipoConta.value === "empresa" ? "flex" : "none";
+  });
+}
+
+if (formCadastro) {
+  formCadastro.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let cadastroValido = true;
+
+    const mensagensErro = formCadastro.querySelectorAll('.erro-texto');
+    mensagensErro.forEach(msg => msg.remove());
+
+    const camposComErro = formCadastro.querySelectorAll('.erro');
+    camposComErro.forEach(campo => campo.classList.remove('erro'));
+
+    function criaErro(campo, mensagem) {
+      cadastroValido = false;
+      campo.classList.add('erro');
+
+      const span = document.createElement('span');
+      span.classList.add('erro-texto');
+      span.textContent = mensagem;
+
+      campo.parentElement.appendChild(span);
+    }
+
+    const nome = document.getElementById('nomeCadastro');
+    const email = document.getElementById('emailCadastro');
+    const campoEmpresa = document.getElementById('empresaCadastro');
+    const senha = document.getElementById('senhaCadastro');
+    const confirmarSenha = document.getElementById('confirmarSenhaCadastro');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!tipoConta.value) {
+      criaErro(tipoConta, 'Selecione o tipo de conta.');
+    }
+
+    if (!nome.value.trim() || nome.value.trim().length < 3) {
+      criaErro(nome, 'Informe um nome válido.');
+    }
+
+    if (!email.value.trim()) {
+      criaErro(email, 'Informe seu e-mail.');
+    } else if (!emailRegex.test(email.value.trim())) {
+      criaErro(email, 'Digite um e-mail válido.');
+    }
+
+    if (tipoConta.value === "empresa" && !campoEmpresa.value.trim()) {
+      criaErro(campoEmpresa, 'Informe seu campo de atuação.');
+    }
+
+    if (!senha.value.trim()) {
+      criaErro(senha, 'Informe uma senha.');
+    } else if (senha.value.length < 6) {
+      criaErro(senha, 'A senha deve ter no mínimo 6 caracteres.');
+    }
+
+    if (!confirmarSenha.value.trim()) {
+      criaErro(confirmarSenha, 'Confirme sua senha.');
+    } else if (confirmarSenha.value !== senha.value) {
+      criaErro(confirmarSenha, 'As senhas não coincidem.');
+    }
+
+    if (cadastroValido) {
+      alert(
+        "Conta criada com sucesso!\n\nUm e-mail de confirmação foi enviado para você com as instruções de ativação."
+      );
+      formCadastro.reset();
+      window.location.href = "login.html";
+    }
+  });
+}
+

@@ -255,5 +255,49 @@
     padding: 16px 20px;
     font-size: 12px;
   }
+
+  /* CRIAR CONTA*/
+
+  .cadastro-section {
+    padding: 40px 20px 60px 20px;
+  }
+
+  .cadastro-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 120px;
+  }
+
+  .cadastro-form {
+    padding: 20px 18px 24px 18px;
+  }
+
 }
+
+  /* LOGIN */
+  .login-section {
+    padding: 40px 20px 60px 20px;
+  }
+
+  .login-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 120px;
+  }
+
+  .login-info {
+    text-align: left;
+  }
+
+  .login-form {
+    padding: 20px 18px 24px 18px;
+  }
+
+  .btn-login-submit {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+
+
 
