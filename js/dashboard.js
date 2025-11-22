@@ -18,6 +18,7 @@ const kpiRisco = document.getElementById("kpiRisco");
 const alertList = document.getElementById("alertList");
 const recommendationList = document.getElementById("recommendationList");
 const summaryList = document.getElementById("summaryList");
+const chartArea = document.getElementById("chartArea"); // área do gráfico do resumo
 
 // Botões de ação rápida
 const btnRegistrar = document.getElementById("btnRegistrar");
@@ -33,8 +34,7 @@ const iaChatBody = document.getElementById("iaChatBody");
 const iaChatForm = document.getElementById("iaChatForm");
 const iaMessageInput = document.getElementById("iaMessage");
 
-// ==== DADOS SIMULADOS POR REGIÃO ====
-
+//  DADOS SIMULADOS POR REGIÃO (incluindo dados para o gráfico do resumo)
 const fakeData = {
   agro_sp: {
     temp: "28 °C",
@@ -55,6 +55,11 @@ const fakeData = {
       "Ajustar irrigação para evitar encharcamento.",
       "Rever agenda de colheita em áreas mais baixas.",
       "Monitorar previsões nas próximas 4 horas."
+    ],
+    chart: [
+      { label: "Temp.", value: 28, type: "temp", unidade: "°C" },
+      { label: "Umid.", value: 62, type: "umi", unidade: "%" },
+      { label: "Chuva", value: 18, type: "chuva", unidade: "mm" }
     ]
   },
   log_rj: {
@@ -76,6 +81,11 @@ const fakeData = {
       "Redirecionar rotas em áreas de risco de alagamento.",
       "Reforçar comunicação com equipes em campo.",
       "Consultar atualização a cada 2 horas."
+    ],
+    chart: [
+      { label: "Temp.", value: 30, type: "temp", unidade: "°C" },
+      { label: "Umid.", value: 70, type: "umi", unidade: "%" },
+      { label: "Chuva", value: 45, type: "chuva", unidade: "mm" }
     ]
   },
   const_bh: {
@@ -96,9 +106,70 @@ const fakeData = {
       "Atividades externas mantidas sem restrições.",
       "Manter monitoramento de ventos para estruturas altas.",
       "Revisar previsão em 12 horas."
+    ],
+    chart: [
+      { label: "Temp.", value: 24, type: "temp", unidade: "°C" },
+      { label: "Umid.", value: 55, type: "umi", unidade: "%" },
+      { label: "Chuva", value: 5, type: "chuva", unidade: "mm" }
     ]
   }
 };
+
+//  FUNÇÃO PARA RENDERIZAR O GRÁFICO INTERATIVO DO RESUMO
+function renderizarGrafico(data) {
+  if (!chartArea || !data || !data.chart) return;
+
+  // limpa o conteúdo anterior
+  chartArea.innerHTML = "";
+
+  // descobre o maior valor para escalar as barras
+  const valores = data.chart.map((p) => p.value);
+  const maxValue = Math.max(...valores, 1); // evita divisão por zero
+
+  data.chart.forEach((ponto) => {
+    // wrapper da barra (coluna)
+    const barWrapper = document.createElement("div");
+    barWrapper.classList.add("chart-bar");
+
+    // barra interna que cresce em altura
+    const barInner = document.createElement("div");
+    barInner.classList.add("chart-bar-inner");
+
+    if (ponto.type === "temp") {
+      barInner.classList.add("bar-temp");
+    } else if (ponto.type === "umi") {
+      barInner.classList.add("bar-umi");
+    } else if (ponto.type === "chuva") {
+      barInner.classList.add("bar-chuva");
+    }
+
+    // altura proporcional ao valor
+    const altura = (ponto.value / maxValue) * 100;
+    barInner.style.height = `${altura}%`;
+
+    // tooltip com valor e unidade
+    const tooltip = document.createElement("div");
+    tooltip.classList.add("chart-tooltip");
+    tooltip.textContent = `${ponto.label}: ${ponto.value} ${ponto.unidade}`;
+    barInner.appendChild(tooltip);
+
+    // valor numérico abaixo da barra
+    const valueLabel = document.createElement("div");
+    valueLabel.classList.add("chart-value-label");
+    valueLabel.textContent = ponto.value;
+
+    // rótulo (Temp., Umid., Chuva)
+    const textLabel = document.createElement("div");
+    textLabel.textContent = ponto.label;
+
+    // monta a estrutura da coluna
+    barWrapper.appendChild(barInner);
+    barWrapper.appendChild(valueLabel);
+    barWrapper.appendChild(textLabel);
+
+    chartArea.appendChild(barWrapper);
+  });
+}
 
 // Atualiza o dashboard quando muda a região ou o período
 function atualizarDashboard() {
@@ -118,6 +189,9 @@ function atualizarDashboard() {
     }
     if (summaryList) {
       summaryList.innerHTML = "";
+    }
+    if (chartArea) {
+      chartArea.innerHTML = ""; // limpa o gráfico se nenhuma região estiver selecionada
     }
     return;
   }
@@ -155,6 +229,9 @@ function atualizarDashboard() {
       summaryList.appendChild(li);
     });
   }
+
+  // atualiza o gráfico interativo de acordo com a região selecionada
+  renderizarGrafico(data);
 }
 
 if (selectRegion) {
@@ -164,10 +241,9 @@ if (selectPeriod) {
   selectPeriod.addEventListener("change", atualizarDashboard);
 }
 
-// ==== AÇÕES RÁPIDAS (apenas feedback visual no protótipo) ====
-
+//  AÇÕES RÁPIDAS (apenas feedback visual no protótipo) 
 function mostrarToastSimples(msg) {
-  alert(msg); // pode virar um toast bonitinho depois
+  alert(msg);
 }
 
 if (btnRegistrar) {
@@ -178,7 +254,7 @@ if (btnRegistrar) {
 
 if (btnRelatorio) {
   btnRelatorio.addEventListener("click", () => {
-    mostrarToastSimples("Aqui você pode gerar um relatório automático em PDF ou outra saída.");
+    mostrarToastSimples("Aqui você pode gerar um relatório automático em PDF.");
   });
 }
 
@@ -188,7 +264,7 @@ if (btnAbrirAssistente) {
   });
 }
 
-// ==== CHAT DO ESPECIALISTA DE IA ====
+// CHAT DO ESPECIALISTA DE IA 
 
 // Abre/fecha o chat
 function abrirChatIA() {
@@ -281,3 +357,19 @@ if (iaChatForm && iaMessageInput) {
 
 // Inicializa o estado padrão
 atualizarDashboard();
+
+// Pontos do mapa interativo
+const mapPoints = document.querySelectorAll(".map-point");
+
+// Clique nos pontos do mapa = troca região no select e atualiza dashboard
+if (mapPoints && mapPoints.length > 0) {
+  mapPoints.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const region = btn.getAttribute("data-region");
+      if (region && selectRegion) {
+        selectRegion.value = region;
+        atualizarDashboard();
+      }
+    });
+  });
+}

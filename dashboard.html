@@ -103,30 +103,60 @@
     <section class="dashboard-main-grid container">
       <div class="dashboard-column">
         <div class="card">
-          <h2>Resumo Climático</h2>
-          <p class="card-subtitle">
-            Médias, mínimas e máximas calculadas a partir dos registros da região selecionada.
-          </p>
-          <div class="chart-placeholder">
-            <p>
-              Gráfico de temperatura, umidade e chuva
-              <br>
-              <span class="chart-caption">(simulado para o protótipo – pode ser integrado a uma API real)</span>
+            <h2>Resumo Climático</h2>
+            <p class="card-subtitle">
+                Médias, mínimas e máximas calculadas a partir dos registros da região selecionada.
             </p>
-          </div>
-          <ul class="summary-list" id="summaryList">
-          </ul>
+
+        <div class="chart-wrapper">
+            <div class="chart-legend">
+                <span class="legend-item legend-temp"></span> Temperatura (°C)
+                <span class="legend-item legend-umi"></span> Umidade (%)
+                <span class="legend-item legend-chuva"></span> Chuva (mm)
+            </div>
+
+            <div class="chart-area" id="chartArea">        
+            </div>
+            </div>
+
+            <ul class="summary-list" id="summaryList"></ul>
         </div>
 
-        <div class="card">
-          <h2>Mapa de eventos e riscos</h2>
-          <p class="card-subtitle">
-            Visualização simplificada das regiões com maior incidência de eventos críticos.
-          </p>
-          <div class="map-placeholder">
-            <p>Mapa interativo (placeholder)</p>
-          </div>
+
+       <div class="card">
+            <h2>Mapa de eventos e riscos</h2>
+            <p class="card-subtitle"> Visualização simplificada das regiões com maior incidência de eventos críticos.</p>
+
+        <div class="map-placeholder">
+            <div class="map-container">
+            <img
+                src="assets/mapa-climatewise.png"
+                alt="Mapa com regiões monitoradas pelo ClimateWise"
+                class="map-image"
+            >
+
+            <button class="map-point map-point-agro" data-region="agro_sp">
+                <span class="map-pulse"></span>
+                <span class="map-tooltip">Agro – Interior de SP</span>
+            </button>
+
+            <button class="map-point map-point-log" data-region="log_rj">
+                <span class="map-pulse"></span>
+                <span class="map-tooltip">Logística – RJ</span>
+            </button>
+
+            <button class="map-point map-point-const" data-region="const_bh">
+                <span class="map-pulse"></span>
+                <span class="map-tooltip">Construção – BH</span>
+            </button>
+            </div>
+
+            <p class="chart-caption">
+            Clique em um ponto do mapa para carregar os dados da região no dashboard.
+            </p>
+            </div>
         </div>
+
       </div>
 
       <div class="dashboard-column">
@@ -160,7 +190,7 @@
           </div>
           <p class="card-hint">
             Essas ações podem ser conectadas às páginas ou APIs reais
-            de registro, relatórios e chatbot (ex.: WatsonX + Node-RED).
+            de registro, relatórios e chatbot.
           </p>
         </div>
 
