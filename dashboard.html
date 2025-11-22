@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-xs.css" media="(max-width: 600px)">
+    <link rel="stylesheet" href="css/style-sm.css" media="(min-width: 600px) and (max-width: 767.98px)">
+    <link rel="stylesheet" href="css/style-md.css" media="(min-width: 768px) and (max-width: 991.98px)">
+    <link rel="stylesheet" href="css/style-lg.css" media="(min-width: 992px) and (max-width: 1299.98px)">
+    <link rel="stylesheet" href="css/style-xl.css" media="(min-width: 1300px)">
+    <title>ClimateWise | Dashboard</title>
+</head>
+<body>
+
+    <header class="cw-header">
+        <div class="cw-header-inner container">
+        <a href="index.html" class="cw-logo">
+            <img src="assets/logo.png" alt="ClimateWise" class="logo-img">
+        </a>
+
+
+        <button class="hamburger" id="btnMenu" aria-label="Abrir menu">
+        ☰
+        </button>
+
+        <nav class="cw-nav" id="mainNav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contato.html">Contato</a></li>
+       
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        </ul>
+        </nav>
+
+      <button class="btn-secondary hide-mobile" id="btnOpenChat">
+        Especialista IA
+      </button>
+    </div>
+  </header>
+
+  <main class="cw-main">
+
+    <section class="dashboard-hero container" id="topoDashboard">
+      <div class="dashboard-title">
+        <h1>Dashboard Climático</h1>
+        <p>
+          Acompanhe indicadores em tempo real, alertas de risco e recomendações
+          operacionais geradas pelo ClimateWise.
+        </p>
+      </div>
+
+      <div class="dashboard-filters">
+        <div class="filter-item">
+          <label for="selectRegion">Região monitorada</label>
+          <select id="selectRegion">
+            <option value="default">Selecione uma região</option>
+            <option value="agro_sp">Agro – Interior de SP</option>
+            <option value="log_rj">Logística – RJ</option>
+            <option value="const_bh">Construção – BH</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="selectPeriod">Período</label>
+          <select id="selectPeriod">
+            <option value="24h">Últimas 24h</option>
+            <option value="7d">Últimos 7 dias</option>
+            <option value="30d">Últimos 30 dias</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-kpis container">
+      <div class="kpi-card">
+        <h3>Temperatura média</h3>
+        <p class="kpi-value" id="kpiTemp">-- °C</p>
+        <span class="kpi-label">Período selecionado</span>
+      </div>
+
+      <div class="kpi-card">
+        <h3>Umidade média</h3>
+        <p class="kpi-value" id="kpiUmi">-- %</p>
+        <span class="kpi-label">Período selecionado</span>
+      </div>
+
+      <div class="kpi-card">
+        <h3>Chuva acumulada</h3>
+        <p class="kpi-value" id="kpiChuva">-- mm</p>
+        <span class="kpi-label">Precipitação</span>
+      </div>
+
+      <div class="kpi-card kpi-risk">
+        <h3>Nível de risco atual</h3>
+        <p class="kpi-value" id="kpiRisco">Aguardando dados</p>
+        <span class="kpi-label">Classificação automática</span>
+      </div>
+    </section>
+
+    <section class="dashboard-main-grid container">
+      <div class="dashboard-column">
+        <div class="card">
+          <h2>Resumo Climático</h2>
+          <p class="card-subtitle">
+            Médias, mínimas e máximas calculadas a partir dos registros da região selecionada.
+          </p>
+          <div class="chart-placeholder">
+            <p>
+              Gráfico de temperatura, umidade e chuva
+              <br>
+              <span class="chart-caption">(simulado para o protótipo – pode ser integrado a uma API real)</span>
+            </p>
+          </div>
+          <ul class="summary-list" id="summaryList">
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Mapa de eventos e riscos</h2>
+          <p class="card-subtitle">
+            Visualização simplificada das regiões com maior incidência de eventos críticos.
+          </p>
+          <div class="map-placeholder">
+            <p>Mapa interativo (placeholder)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-column">
+
+        <div class="card">
+          <h2>Alertas climáticos ativos</h2>
+          <ul class="alert-list" id="alertList">
+            <li>Nenhum alerta carregado. Selecione uma região.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Recomendações operacionais</h2>
+          <ul class="recommendation-list" id="recommendationList">
+            <li>Selecione uma região para visualizar recomendações específicas.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Ações rápidas</h2>
+          <div class="quick-actions">
+            <button class="btn-primary" id="btnRegistrar">
+              Registrar dados climáticos
+            </button>
+            <button class="btn-outline" id="btnRelatorio">
+              Gerar relatório automático
+            </button>
+            <button class="btn-outline" id="btnAbrirAssistente">
+              Abrir Especialista IA
+            </button>
+          </div>
+          <p class="card-hint">
+            Essas ações podem ser conectadas às páginas ou APIs reais
+            de registro, relatórios e chatbot (ex.: WatsonX + Node-RED).
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="ia-chat" id="iaChat" aria-hidden="true">
+    <div class="ia-chat-header">
+      <div>
+        <h2>Especialista IA ClimateWise</h2>
+        <span>Assistente virtual para interpretação climática</span>
+      </div>
+      <button class="ia-close" id="btnCloseChat" aria-label="Fechar chat">
+        &times;
+      </button>
+    </div>
+
+    <div class="ia-chat-body" id="iaChatBody">
+      <div class="msg msg-bot">
+        Olá! Sou o especialista de IA do ClimateWise.
+        Pergunte sobre riscos climáticos, impactos operacionais
+        ou como interpretar os indicadores do dashboard.
+      </div>
+    </div>
+
+    <form class="ia-chat-input" id="iaChatForm">
+      <input
+        type="text"
+        id="iaMessage"
+        placeholder="Digite sua pergunta..."
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <button class="ia-chat-fab" id="fabChat" aria-label="Abrir chat de IA"></button>
+
+  <footer class="cw-footer">
+    <div class="container">
+      <p>ClimateWise – Global Solution 2025 • FIAP</p>
+    </div>
+  </footer>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
